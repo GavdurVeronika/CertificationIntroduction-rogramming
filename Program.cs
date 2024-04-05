@@ -10,12 +10,27 @@ void Main()
     int N = ReadInt("Input number N: ");
     PrintNumbersBetweenMN(N, M);
 }
+
 void PrintNumbersBetweenMN(int numberN, int numberM)
 {
-    if (numberN < numberM) return;
+    if (numberM > numberN || numberM == numberN)
 
-    PrintNumbersBetweenMN(numberN - 1, numberM);
-    System.Console.Write(numberN + " ");
+        System.Console.Write($"{numberM} >= {numberN} condition is not true");
+    else PrintAllRight(numberN, numberM);
+    PrintNumbersBetweentoMN(numberN, numberM);
+}
+
+void PrintNumbersBetweentoMN(int numberN, int numberM)
+{
+    if (numberN < numberM) return;
+    PrintNumbersBetweentoMN(numberN - 1, numberM);
+
+    System.Console.Write(string.Join("', '", numberN) + ", ");
+}
+
+void PrintAllRight(int number1, int number2)
+{
+    System.Console.Write("N = " + number1 + "; M = " + number2 + " -> ");
 }
 
 int ReadInt(string msg)
@@ -27,4 +42,12 @@ int ReadInt(string msg)
 Main();
 
 
+// using System;
 
+// class Program
+// {
+//     static void Main()
+//     {
+//         Console.Write("\"Hello, World!\"");
+//     }
+// }
