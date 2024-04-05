@@ -1,29 +1,30 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-// Задайте значение N. Напишите программу, которая выведет
-// все натуральные числа в промежутке от 1 до N.
-// Указание
-// Использовать рекурсию. Не использовать цикл.
-// Пример
-// N=5 => 1 2 3 4 5
+﻿// Урок 7. Рекурсия
+
+// Задача 1: Задайте значения M и N. 
+// Напишите программу, которая выведет все натуральные числа в промежутке от M до N. 
+// Использовать рекурсию, не использовать циклы.
 
 void Main()
 {
-int N = ReadInt("Введите число: ");
-PrintNumbers(N);
+    int M = ReadInt("Input number M: ");
+    int N = ReadInt("Input number N: ");
+    PrintNumbersBetweenMN(N, M);
 }
-
-void PrintNumbers(int number)
+void PrintNumbersBetweenMN(int numberN, int numberM)
 {
-if(number < 1) return;
-PrintNumbers(number - 1);
-System.Console.Write(number + " ");
+    if (numberN < numberM) return;
+
+    PrintNumbersBetweenMN(numberN - 1, numberM);
+    System.Console.Write(numberN + " ");
 }
 
 int ReadInt(string msg)
 {
-System.Console.Write(msg);
-return Convert.ToInt32(Console.ReadLine());
+    System.Console.Write(msg);
+    return Convert.ToInt32(Console.ReadLine());
 }
 
 Main();
+
+
+
