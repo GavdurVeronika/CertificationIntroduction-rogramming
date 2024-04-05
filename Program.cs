@@ -25,7 +25,7 @@ void PrintNumbersBetweentoMN(int numberN, int numberM)
     if (numberN < numberM) return;
     PrintNumbersBetweentoMN(numberN - 1, numberM);
 
-    System.Console.Write(string.Join("', '", numberN) + ", ");
+    System.Console.Write(numberN + ", ");
 }
 
 void PrintAllRight(int number1, int number2)
